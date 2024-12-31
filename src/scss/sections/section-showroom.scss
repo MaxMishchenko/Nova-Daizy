@@ -1,0 +1,99 @@
+.section {
+    &__showroom {
+        padding: 120px 80px;
+
+        @media only screen and (max-width: 1080px) {
+            padding: 20px 80px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            padding: 20px;
+        }
+
+        &-title {
+            font-size: 1.75rem;
+            margin-bottom: 80px;
+
+            @media only screen and (max-width: 768px) {
+                margin-bottom: 40px;
+            }
+        }
+
+        &-img {
+            height: 601px;
+            width: calc(100% + 80px);
+            object-fit: cover;
+            position: relative;
+            left: -80px;
+            margin-bottom: 70px;
+
+            @media only screen and (max-width: 1080px) {
+                height: 545px;
+                position: unset;
+                width: 100%;
+            }
+
+            @media only screen and (max-width: 768px) {
+                margin-bottom: 20px;
+            }
+        }
+
+        &-list {
+            width: 80%;
+
+            @media only screen and (max-width: 1080px) {
+                flex-direction: column;
+            }
+        }
+
+        &-address {
+            font-size: 1rem;
+            max-width: 189px;
+
+            @media only screen and (max-width: 1080px) {
+                margin-bottom: 40px;
+            }
+
+            &:first-child {
+                margin-right: 160px;
+
+                @media only screen and (max-width: 1080px) {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &-container {
+            @media only screen and (max-width: 1080px) {
+                align-items: flex-start;
+            }
+
+            @media only screen and (max-width: 768px) {
+                flex-direction: column;
+            }
+        }
+
+        &-btn {
+            width: 201px;
+            height: 70px;
+            background-color: transparent;
+            border-radius: 32px;
+            padding: 5px;
+            transition: .4s;
+
+            @media only screen and (max-width: 768px) {
+                display: flex;
+                align-self: center;
+            }
+
+            &:hover {
+                background-color: var(--color--beige);
+            }
+
+            &-img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}

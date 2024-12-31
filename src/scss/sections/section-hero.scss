@@ -1,0 +1,65 @@
+.section {
+    &__hero {
+        background-image: url('../img/section_hero_bg.webp');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: calc(100vh - 93px);
+        position: relative;
+
+        &-bg {
+            position: absolute;
+            right: 100px;
+            bottom: 60px;
+
+            @media only screen and (max-width: 1080px) {
+                right: 40px;
+                bottom: 40px;
+            }
+
+            @media only screen and (max-width: 768px) {
+                right: 20px;
+                bottom: 20px;
+            }
+        }
+
+        &-info {
+            border-bottom: 3px solid var(--color--beige);
+            padding: 20px 80px;
+
+            @media only screen and (max-width: 768px) {
+                padding: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        &-text {
+            font-size: 1.75rem;
+            font-weight: 400;
+
+            @media only screen and (max-width: 1080px) {
+                font-size: 1.375rem;
+                max-width: 177px;
+            }
+
+            @media only screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        &-title {
+            font-size: 1.75rem;
+            font-weight: 400;
+
+            @media only screen and (max-width: 1080px) {
+                font-weight: 700;
+            }
+        }
+
+        &-img {
+            margin-right: 15px;
+        }
+    }
+}

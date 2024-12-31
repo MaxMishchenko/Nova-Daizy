@@ -1,0 +1,92 @@
+.section {
+    &__spec {
+        padding: 80px;
+
+        @media only screen and (max-width: 1080px) {
+            padding: 40px 80px;
+        }
+
+        @media only screen and (max-width: 768px) {
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        &-title {
+            font-size: 1.75rem;
+
+            @media only screen and (max-width: 1080px) {
+                margin-bottom: 20px;
+            }
+        }
+
+        &-text {
+            font-size: 1rem;
+            padding: 20px 0;
+            max-width: 87%;
+
+            @media only screen and (max-width: 1080px) {
+                padding: 0;
+                max-width: 100%;
+            }
+        }
+
+        &-info {
+            width: 80%;
+
+            @media only screen and (max-width: 768px) {
+                width: 100%;
+            }
+        }
+
+        &-container {
+            margin-bottom: 40px;
+
+            @media only screen and (max-width: 1080px) {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        &-certs {
+            width: 71%;
+            height: auto;
+
+            @media only screen and (max-width: 1080px) {
+                width: 100%;
+            }
+        }
+
+        &-img {
+            height: 478px;
+            width: calc(100% + 80px);
+            object-fit: cover;
+            margin-bottom: 60px;
+
+            @media only screen and (max-width: 1080px) {
+                margin-bottom: 20px;
+            }
+        }
+
+        &-btn {
+            background-color: transparent;
+            width: 225px;
+            height: 225px;
+            border-radius: 50%;
+            padding: 5px;
+            transition: .4s;
+
+            @media only screen and (max-width: 1080px) {
+                display: none;
+            }
+
+            &:hover {
+                background-color: var(--color--beige);
+            }
+
+            &-img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
