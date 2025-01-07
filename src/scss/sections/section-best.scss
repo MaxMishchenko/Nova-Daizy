@@ -159,8 +159,8 @@
             }
 
             @media only screen and (max-width: 768px) {
-                position: unset;
                 justify-self: center;
+                display: grid;
             }
 
             &:hover {
