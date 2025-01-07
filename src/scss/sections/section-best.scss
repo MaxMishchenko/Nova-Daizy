@@ -2,7 +2,11 @@
     &__best {
         padding: 80px 80px 180px 80px;
 
-        @media only screen and (max-width: 1080px) {
+        @media only screen and (max-width: 1280px) {
+            padding: 40px 40px 120px;
+        }
+
+        @media only screen and (max-width: 1024px) {
             flex-direction: column-reverse;
             padding: 0;
         }
@@ -11,9 +15,9 @@
             width: 60%;
             position: relative;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1024px) {
                 width: 100%;
-                padding: 80px;
+                padding: 40px;
             }
 
             @media only screen and (max-width: 768px) {
@@ -23,7 +27,7 @@
             &-img {
                 width: 40%;
 
-                @media only screen and (max-width: 1080px) {
+                @media only screen and (max-width: 1024px) {
                     width: 100%;
                 }
             }
@@ -37,6 +41,10 @@
                 padding-top: 20px;
                 justify-content: center;
             }
+
+            @media only screen and (max-width: 425px) {
+                flex-direction: column-reverse;
+            }
         }
 
         &-title {
@@ -47,10 +55,10 @@
         &-text {
             font-size: 1rem;
             margin-bottom: 15px;
-            max-width: 69%;
+            max-width: 88%;
             line-height: 22px;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1024px) {
                 max-width: 100%;
             }
         }
@@ -59,11 +67,19 @@
             position: relative;
             padding-left: 45px;
 
+            @media only screen and (max-width: 425px) {
+                margin: 0 auto;
+            }
+
             &:first-child {
                 margin-right: 50px;
 
                 @media only screen and (max-width: 768px) {
                     margin-right: 35px;
+                }
+
+                @media only screen and (max-width: 425px) {
+                    margin: 0 auto;
                 }
             }
         }
@@ -101,15 +117,11 @@
                     position: absolute;
                     height: 4px;
                     background-color: var(--color--beige);
-                    left: 0;
+                    left: -4px;
                     right: 0;
                     top: 55%;
                     transform: translateY(-50%);
                     width: calc(100% + 10px);
-
-                    @media only screen and (max-width: 768px) {
-                        width: 100%;
-                    }
                 }
             }
 
@@ -137,10 +149,11 @@
             padding: 5px;
             transition: .4s;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1024px) {
                 position: relative;
                 transform: none;
-                bottom: -60px;
+                bottom: 0;
+                right: 0;
                 display: flex;
                 justify-self: flex-end;
             }

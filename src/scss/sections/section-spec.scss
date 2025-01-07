@@ -1,9 +1,10 @@
 .section {
     &__spec {
-        padding: 80px;
+        padding: 40px 80px 80px 80px;
+        overflow: hidden;
 
-        @media only screen and (max-width: 1080px) {
-            padding: 40px 80px;
+        @media only screen and (max-width: 1280px) {
+            padding: 40px 40px 40px 40px;
         }
 
         @media only screen and (max-width: 768px) {
@@ -13,19 +14,20 @@
 
         &-title {
             font-size: 1.75rem;
+            margin-right: 15px;
+        }
 
-            @media only screen and (max-width: 1080px) {
-                margin-bottom: 20px;
-            }
+        &-dim {
+            margin-top: 20px;
         }
 
         &-text {
             font-size: 1rem;
             padding: 20px 0;
             max-width: 87%;
+            line-height: 22px;
 
-            @media only screen and (max-width: 1080px) {
-                padding: 0;
+            @media only screen and (max-width: 1024px) {
                 max-width: 100%;
             }
         }
@@ -41,28 +43,30 @@
         &-container {
             margin-bottom: 40px;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1024px) {
                 flex-direction: column;
                 align-items: flex-start;
             }
         }
 
         &-certs {
-            width: 71%;
             height: auto;
+            margin-right: -20px;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1024px) {
                 width: 100%;
             }
         }
 
         &-img {
-            height: 478px;
+            height: 475px;
             width: calc(100% + 80px);
             object-fit: cover;
             margin-bottom: 60px;
+            position: relative;
+            right: 0;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1024px) {
                 margin-bottom: 20px;
             }
         }
@@ -75,7 +79,7 @@
             padding: 5px;
             transition: .4s;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1024px) {
                 display: none;
             }
 

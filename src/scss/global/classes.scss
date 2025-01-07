@@ -32,16 +32,25 @@
     &--wrap {
         flex-wrap: wrap;
     }
+
+    &--now-shrink {
+        flex-shrink: 0;
+    }
 }
 
 .section {
     &--shadow {
-        box-shadow: 0 -4px 32px -14px var(--color--shadow);
+        //box-shadow: 0 -4px 32px -14px var(--color--shadow);
+        background-color: #fbfbfb63;
     }
 }
 
 .font {
     &--bold {
         font-weight: 700;
+    }
+
+    &--italic {
+        font-style: italic;
     }
 }

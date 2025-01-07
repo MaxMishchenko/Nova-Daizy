@@ -1,9 +1,13 @@
 .section {
     &__buy {
-        padding: 100px 0 70px 0;
+        padding: 80px 80px 60px 80px;
         overflow: hidden;
 
-        @media only screen and (max-width: 1080px) {
+        @media only screen and (max-width: 1280px) {
+            padding: 40px 40px 60px 40px;
+        }
+
+        @media only screen and (max-width: 1024px) {
             flex-direction: row;
             padding: 40px 0 70px 0;
         }
@@ -14,10 +18,23 @@
 
         &-container {
             width: 50%;
-            padding-left: 80px;
 
-            @media only screen and (max-width: 1080px) {
-                width: 95%;
+            &:last-child {
+                padding-left: 80px;
+
+                @media only screen and (max-width: 1024px) {
+                    width: 100%;
+                    padding-left: 40px;
+                }
+
+                @media only screen and (max-width: 768px) {
+                    padding-left: 20px;
+                }
+            }
+
+            @media only screen and (max-width: 1024px) {
+                width: 100%;
+                padding-left: 40px;
             }
 
             @media only screen and (max-width: 768px) {
@@ -52,7 +69,7 @@
                     left: -80px;
                     width: calc(100% - 20px);
 
-                    @media only screen and (max-width: 1080px) {
+                    @media only screen and (max-width: 1024px) {
                         left: 0;
                         width: 84%;
                     }
@@ -65,10 +82,10 @@
 
             &-second {
                 &:after {
-                    right: 0;
-                    width: 100%;
+                    right: -80px;
+                    width: calc(100% + 80px);
 
-                    @media only screen and (max-width: 1080px) {
+                    @media only screen and (max-width: 1024px) {
                         left: 0;
                         width: 84%;
                     }
@@ -84,8 +101,9 @@
             font-size: 1rem;
             padding: 60px 0 100px 0;
             max-width: 84%;
+            line-height: 22px;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1024px) {
                 padding-bottom: 0;
             }
 
@@ -101,19 +119,18 @@
             object-fit: contain;
             width: 50%;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1024px) {
                 position: unset;
                 object-fit: cover;
                 width: calc(50% - 10px);
             }
 
             &:nth-child(2) {
-                right: -17%;
-                height: 355px;
-                padding-top: 15px;
+                right: -15%;
+                height: 530px;
                 margin-bottom: 60px;
 
-                @media only screen and (max-width: 1080px) {
+                @media only screen and (max-width: 1024px) {
                     height: 462px;
                     padding: 0;
                     margin: 60px 10px 60px 0;
@@ -126,10 +143,10 @@
             }
 
             &:nth-child(3) {
-                left: -19%;
+                left: -15%;
                 height: 530px;
 
-                @media only screen and (max-width: 1080px) {
+                @media only screen and (max-width: 1024px) {
                     height: 462px;
                     margin: 60px 0 60px 10px;
                 }

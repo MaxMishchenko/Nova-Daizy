@@ -1,9 +1,14 @@
 .section {
     &__showroom {
-        padding: 120px 80px;
+        padding: 80px;
+        overflow: hidden;
 
-        @media only screen and (max-width: 1080px) {
-            padding: 20px 80px;
+        @media only screen and (max-width: 1280px) {
+            padding: 40px;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            padding: 20px 40px;
         }
 
         @media only screen and (max-width: 768px) {
@@ -14,23 +19,25 @@
             font-size: 1.75rem;
             margin-bottom: 80px;
 
-            @media only screen and (max-width: 768px) {
+            @media only screen and (max-width: 1024px) {
                 margin-bottom: 40px;
             }
         }
 
         &-img {
-            height: 601px;
+            height: 600px;
             width: calc(100% + 80px);
             object-fit: cover;
             position: relative;
             left: -80px;
             margin-bottom: 70px;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1280px) {
+                margin-bottom: 40px;
+            }
+
+            @media only screen and (max-width: 1024px) {
                 height: 545px;
-                position: unset;
-                width: 100%;
             }
 
             @media only screen and (max-width: 768px) {
@@ -41,30 +48,39 @@
         &-list {
             width: 80%;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 768px) {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            @media only screen and (max-width: 425px) {
                 flex-direction: column;
             }
         }
 
         &-address {
             font-size: 1rem;
-            max-width: 189px;
+            max-width: 205px;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1024px) {
                 margin-bottom: 40px;
             }
 
             &:first-child {
                 margin-right: 160px;
 
-                @media only screen and (max-width: 1080px) {
-                    margin-right: 0;
+                @media only screen and (max-width: 1024px) {
+                    margin-right: 60px;
+                }
+
+                @media only screen and (max-width: 768px) {
+                    margin-right: 20px;
                 }
             }
         }
 
         &-container {
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1024px) {
                 align-items: flex-start;
             }
 

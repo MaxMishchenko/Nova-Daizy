@@ -1,26 +1,29 @@
 .section {
     &__contact {
-        padding: 120px 80px;
+        padding: 80px;
 
-        @media only screen and (max-width: 1080px) {
-            padding: 40px 0 40px 80px;
-            overflow: hidden;
+        @media only screen and (max-width: 1280px) {
+            padding: 40px;
         }
 
         @media only screen and (max-width: 768px) {
             padding: 20px 0 20px 20px;
+            overflow: hidden;
         }
 
         &-card {
+            width: calc(100vw / 3);
+
             &:hover {
                 cursor: pointer;
             }
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 768px) {
                 object-fit: cover;
                 scroll-snap-align: start;
                 scroll-snap-stop: always;
                 flex-shrink: 0;
+                width: calc(100vw - 60px);
             }
         }
 
@@ -37,8 +40,14 @@
             font-size: 1.75rem;
             padding-left: 10px;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 1024px) {
+                font-size: 1.125rem;
+            }
+
+            @media only screen and (max-width: 768px) {
                 padding-bottom: 20px;
+                padding-top: 20px;
+                padding-left: 0;
             }
         }
 
@@ -47,42 +56,59 @@
             height: 550px;
             object-fit: cover;
             padding: 0 10px 30px 10px;
-            margin-bottom: 30px;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 768px) {
                 padding: 0 10px 0 0;
+                height: 300px;
             }
         }
 
         &-btn {
-            height: 73px;
-            width: 305px;
+            height: 55px;
+            width: 55px;
             background-color: transparent;
-            border-radius: 60px;
-            transition: .4s;
+            border-radius: 50%;
+            transition: all .4s;
+            pointer-events: none;
+            box-shadow: 0 0 10px 3px #26262640;
+            position: fixed;
+            z-index: 999;
+            right: 30px;
+            bottom: 30px;
+            opacity: 0;
 
-            @media only screen and (max-width: 1080px) {
-                margin-right: 35px;
+            @media only screen and (max-width: 768px) {
+                right: 20px;
+                bottom: 20px;
+            }
+
+            &.visible {
+                opacity: .7;
+                visibility: visible;
+                pointer-events: auto;
             }
 
             &:hover {
-                background-color: var(--color--green);
+                transform: scale(1.1);
+                box-shadow: 0 0 10px 3px #00000073;
+                opacity: 1;
             }
 
             &-img {
-                width: 100%;
-                height: auto;
+                width: 55px;
+                height: 55px;
             }
         }
 
         &-container {
             margin: 0 -10px 100px -10px;
 
-            @media only screen and (max-width: 1080px) {
+            @media only screen and (max-width: 768px) {
                 overflow-x: scroll;
                 scroll-snap-type: x mandatory;
                 scroll-behavior: smooth;
                 overflow-y: hidden;
+                margin: 0;
             }
         }
     }

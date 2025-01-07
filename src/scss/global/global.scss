@@ -8,3 +8,10 @@
     color: var(--color--olive);
     font-weight: normal;
 }
+
+body {
+    &.lock {
+        overflow: hidden;
+        pointer-events: none;
+    }
+}
