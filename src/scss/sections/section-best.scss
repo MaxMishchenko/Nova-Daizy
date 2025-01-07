@@ -151,7 +151,7 @@
 
             @media only screen and (max-width: 1024px) {
                 position: relative;
-                transform: none;
+                transform: translateX(0);
                 bottom: 0;
                 right: 0;
                 display: flex;
