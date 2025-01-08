@@ -25,12 +25,15 @@
         }
 
         &-img {
-            height: 600px;
+            height: 690px;
             width: calc(100% + 80px);
-            object-fit: cover;
             position: relative;
             left: -80px;
             margin-bottom: 70px;
+            background-image: url(../img/showroom.webp);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
 
             @media only screen and (max-width: 1280px) {
                 margin-bottom: 40px;

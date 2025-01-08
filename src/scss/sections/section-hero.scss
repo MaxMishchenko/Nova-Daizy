@@ -1,11 +1,11 @@
 .section {
     &__hero {
-        background-image: url('../img/section_hero_bg.webp');
+        background-image: url(../img/section_hero_bg.webp);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
         width: 100%;
-        height: calc(100vh - 93px);
+        height: calc(100dvh - 93px);
         position: relative;
 
         &-bg {

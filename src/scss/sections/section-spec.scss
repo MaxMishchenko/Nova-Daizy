@@ -63,9 +63,12 @@
         }
 
         &-img {
-            height: 475px;
+            background-image: url(../img/spec_img.webp);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 640px;
             width: calc(100% + 80px);
-            object-fit: cover;
             margin-bottom: 60px;
             position: relative;
             right: 0;

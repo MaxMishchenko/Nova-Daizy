@@ -1,12 +1,13 @@
 {
   "name": "Gulp4",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gulp for Fitofan",
   "main": "gulpfile.js",
   "dependencies": {
     "gulp-strip-comments": "^2.5.2"
   },
   "devDependencies": {
+    "browser-sync": "^3.0.3",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
