@@ -38,3 +38,37 @@ const elements = document.querySelectorAll('.section__best-price-old');
 elements.forEach(element => {
     observer.observe(element);
 });
+
+//Check
+document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const elements = document.querySelectorAll('.section__reasons-icon');
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+
+                observer.unobserve(entry.target);
+                addVisibleClasses(elements);
+            }
+        });
+    }, observerOptions);
+
+    if (elements.length > 0) {
+        observer.observe(elements[0]);
+    }
+
+    function addVisibleClasses(elements) {
+        elements.forEach((el, index) => {
+            setTimeout(() => {
+                el.classList.add('visible');
+            }, index * 600);
+        });
+    }
+});
+
+
