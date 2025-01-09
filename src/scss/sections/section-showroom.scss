@@ -85,6 +85,7 @@
         &-container {
             @media only screen and (max-width: 1024px) {
                 align-items: flex-start;
+                flex-wrap: wrap;
             }
 
             @media only screen and (max-width: 768px) {
@@ -93,25 +94,39 @@
         }
 
         &-btn {
-            width: 201px;
-            height: 70px;
-            background-color: transparent;
+            background-color: var(--color--beige);
+            border: 2px solid transparent;
             border-radius: 32px;
-            padding: 5px;
+            padding: 3px 17px 3px 3px;
             transition: .4s;
 
+            @media only screen and (max-width: 1024px) {
+                margin: 0 auto;
+                transition: 0s;
+            }
+
             @media only screen and (max-width: 768px) {
-                display: flex;
-                align-self: center;
+                margin: 0;
+                width: 100%;
+                padding: 13px 8px;
             }
 
             &:hover {
-                background-color: var(--color--beige);
+                border: 2px solid var(--color--white);
+                box-shadow: 0 0 0 2px var(--color--beige);
+            }
+
+            &-text {
+                color: var(--color--white);
+                font-size: 1.375rem;
             }
 
             &-img {
-                width: 100%;
-                height: auto;
+                margin-right: 15px;
+
+                @media only screen and (max-width: 768px) {
+                    display: none;
+                }
             }
         }
     }

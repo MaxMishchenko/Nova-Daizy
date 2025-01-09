@@ -7,23 +7,22 @@
         }
 
         @media only screen and (max-width: 768px) {
-            padding: 20px 0 20px 20px;
+            padding: 20px 0 80px 20px;
             overflow: hidden;
         }
 
         &-card {
-            width: calc(100vw / 3);
+            margin-right: 20px;
 
-            &:hover {
-                cursor: pointer;
+            &:last-child {
+                margin-right: 0;
             }
 
-            @media only screen and (max-width: 768px) {
+            @media only screen and (max-width: 1024px) {
                 object-fit: cover;
                 scroll-snap-align: start;
                 scroll-snap-stop: always;
                 flex-shrink: 0;
-                width: calc(100vw - 60px);
             }
         }
 
@@ -37,37 +36,23 @@
         }
 
         &-heading {
-            font-size: 1.75rem;
-            padding-left: 10px;
-
-            @media only screen and (max-width: 1280px) {
-                font-size: 1.375rem;
-            }
-
-            @media only screen and (max-width: 1024px) {
-                font-size: 1.125rem;
-            }
+            font-size: 1.375rem;
+            margin-top: 40px;
+            padding-bottom: 20px;
 
             @media only screen and (max-width: 768px) {
-                padding-bottom: 20px;
-                padding-top: 20px;
-                padding-left: 0;
+                margin-top: 20px;
+                font-size: 1rem;
             }
         }
 
         &-img {
-            width: 100%;
-            height: 570px;
-            object-fit: cover;
-            padding: 0 10px 30px 10px;
-
-            @media only screen and (max-width: 1024px) {
-                height: 470px;
-            }
+            height: 507px;
+            width: 292px;
 
             @media only screen and (max-width: 768px) {
-                padding: 0 10px 0 0;
-                height: 400px;
+                width: 245px;
+                height: 427px;
             }
         }
 
@@ -109,14 +94,11 @@
         }
 
         &-container {
-            margin: 0 -10px 100px -10px;
-
-            @media only screen and (max-width: 768px) {
+            @media only screen and (max-width: 1024px) {
                 overflow-x: scroll;
                 scroll-snap-type: x mandatory;
                 scroll-behavior: smooth;
                 overflow-y: hidden;
-                margin: 0;
             }
         }
     }
