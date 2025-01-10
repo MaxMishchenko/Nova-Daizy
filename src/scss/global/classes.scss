@@ -21,12 +21,20 @@
         justify-content: flex-end;
     }
 
+    &--justify-start {
+        justify-content: left;
+    }
+
     &--column {
         flex-direction: column;
     }
 
     &--row {
         flex-direction: row;
+
+        &-reverse {
+            flex-direction: row-reverse;
+        }
     }
 
     &--wrap {
@@ -40,7 +48,6 @@
 
 .section {
     &--shadow {
-        //box-shadow: 0 -4px 32px -14px var(--color--shadow);
         background-color: #fbfbfb63;
     }
 }

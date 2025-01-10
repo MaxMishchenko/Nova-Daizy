@@ -1,74 +1,120 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const contactBtn = document.getElementById('contact');
-    const popup = document.getElementById('popup');
-    //const closeButton = document.getElementById('popupClose');
-    const body = document.body;
+    //Feedback rating stars
+    const stars = document.querySelectorAll('.form__rating-star');
+    const ratingResult = document.getElementById('ratingResult');
 
-    const togglePopup = (isActive) => {
+    let selectedRating = 0;
+
+    stars.forEach(star => {
+        ['mouseover', 'mouseout', 'click'].forEach(eventType => {
+            star.addEventListener(eventType, handleStarEvent);
+        });
+    });
+
+    function handleStarEvent(event) {
+        const star = event.target;
+        const rate = star.dataset.rate;
+
+        switch (event.type) {
+            case 'mouseover':
+                updateStars(rate, 'hover');
+                break;
+            case 'mouseout':
+                updateStars(selectedRating, 'selected');
+                break;
+            case 'click':
+                selectedRating = rate;
+                ratingResult.value = rate;
+                updateStars(selectedRating, 'selected');
+                break;
+        }
+    }
+
+    function updateStars(rate, className) {
+        stars.forEach(star => {
+            star.classList.remove('hover', 'selected');
+            if (star.dataset.rate <= rate) {
+                star.classList.add(className);
+            }
+        });
+    }
+
+    const body = document.body;
+    const buttons = {
+        contactBtn: {
+            element: document.getElementById('contactBtn'),
+            popup: document.getElementById('popupContactUs'),
+        },
+        feedbackBtn: {
+            element: document.getElementById('feedbackBtn'),
+            popup: document.getElementById('popupFeedback'),
+        },
+    };
+
+    //Floating button
+    window.addEventListener('scroll', () => {
+        buttons.contactBtn.element.classList.toggle('visible', window.scrollY > 0);
+    });
+
+    //Switch popup
+    const togglePopup = (popup, isActive) => {
         popup.classList.toggle('active', isActive);
         body.classList.toggle('lock', isActive);
     };
 
-    window.addEventListener('scroll', () => {
-        contactBtn.classList.toggle('visible', window.scrollY > 0);
-    });
+    // Buttons & popups
+    Object.values(buttons).forEach(({ element, popup }) => {
+        element.addEventListener('click', () => togglePopup(popup, true));
 
-    contactBtn.addEventListener('click', () => togglePopup(true));
+        popup.addEventListener('click', (e) => {
+            if (e.target === popup) togglePopup(popup, false);
 
-    //closeButton.addEventListener('click', () => togglePopup(false));
+            stars.forEach(star => star.classList.remove('hover', 'selected'));
+        });
 
-    popup.addEventListener('click', (e) => {
-        if (e.target === popup) togglePopup(false);
-    });
-});
+        const closeButton = popup.querySelector('.form__close');
 
-//Price
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+        if (closeButton) {
+            closeButton.addEventListener('click', () => togglePopup(popup, false));
 
-            observer.unobserve(entry.target);
+            stars.forEach(star => star.classList.remove('hover', 'selected'));
         }
     });
-}, { threshold: 1 });
 
-const elements = document.querySelectorAll('.section__best-price-old');
+    //Animations
+    const setupIntersectionObserver = (selector, callback, options = { threshold: 1 }) => {
+        const elements = document.querySelectorAll(selector);
 
-elements.forEach(element => {
-    observer.observe(element);
-});
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    callback(entry.target);
 
-//Check
-document.addEventListener('DOMContentLoaded', () => {
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, options);
+
+        elements.forEach(element => observer.observe(element));
     };
 
-    const elements = document.querySelectorAll('.section__reasons-icon');
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
+    //Animation for .section__best-price-old
+    setupIntersectionObserver('.section__best-price-old', (element) => {
+        element.classList.add('visible');
+    });
 
-                observer.unobserve(entry.target);
-                addVisibleClasses(elements);
-            }
-        });
-    }, observerOptions);
+    //Animation for .section__reasons-icon
+    setupIntersectionObserver(
+        '.section__reasons-icon',
+        () => addVisibleClasses('.section__reasons-icon'),
+        { threshold: 0.1 }
+    );
 
-    if (elements.length > 0) {
-        observer.observe(elements[0]);
-    }
-
-    function addVisibleClasses(elements) {
+    const addVisibleClasses = (selector) => {
+        const elements = document.querySelectorAll(selector);
         elements.forEach((el, index) => {
-            setTimeout(() => {
-                el.classList.add('visible');
-            }, index * 600);
+            setTimeout(() => el.classList.add('visible'), index * 600);
         });
-    }
+    };
 });
-
 
