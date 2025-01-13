@@ -12,6 +12,7 @@
     opacity: 0;
     transition: all .4s;
     overflow-y: auto;
+    pointer-events: none;
 
     &.active {
         visibility: visible;

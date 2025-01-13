@@ -6,8 +6,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="100% European-made, Nova Dazy hardwood flooring is not just a choice for style—it's a choice for sustainability. With a commitment to environmental responsibility, Nova Dazy stands out as one of the most ecologically friendly flooring options globally.">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=5.0, width=device-width">
-
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
     <meta name="referrer" content="no-referrer-when-downgrade">
@@ -62,7 +61,7 @@
 
             <p class="section__best-save">Save <span class="font--bold">$2,500</span> on <span class="font--bold">1,000</span> sq.ft</p>
 
-            <button type="button" class="section__best-btn">
+            <button type="button" class="section__best-btn order--js">
                 <img loading="lazy" class="section__best-btn-img" src="./img/order_now.webp" alt="Order Now Button">
             </button>
         </div>
@@ -156,7 +155,7 @@
                 <p class="section__spec-text">Discover the harmony of nature and innovation with Nova Dazy hardwood flooring. Transform your home with floors that reflect your values and style. Contact us to learn more or visit our showroom today!</p>
             </div>
 
-            <button type="button" class="section__spec-btn">
+            <button type="button" class="section__spec-btn order-now--js">
                 <img loading="lazy" class="section__spec-btn-img" src="./img/order_now.webp" alt="Order Now Button">
             </button>
         </div>
@@ -232,58 +231,6 @@
             </article>
 
             <div id="feedbackBtn" class="section__feedback-field flex flex--align-center">Leave your feedback here</div>
-
-            <div id="popupFeedback" class="popup">
-                <div class="form">
-                    <div class="form__close"></div>
-
-                    <h2 class="form__title font--bold">Leave you feedback</h2>
-
-                    <ul class="form__rating flex flex--justify-center flex--row-reverse">
-                        <li data-rate="5" class="form__rating-star"></li>
-                        <li data-rate="4" class="form__rating-star"></li>
-                        <li data-rate="3" class="form__rating-star"></li>
-                        <li data-rate="2" class="form__rating-star"></li>
-                        <li data-rate="1" class="form__rating-star"></li>
-                    </ul>
-
-                    <form action="#" class="form__content flex flex--column">
-                        <div class="form__container flex flex--align-center">
-                            <div class="form__field-wrapper">
-                                <label for="fb_firstname" class="form__label">Required *</label>
-
-                                <input tabindex="1" id="fb_firstname" class="form__field" type="text" maxlength="120" name="firstname" placeholder="Name" required>
-
-                                <span class="form__icon form__icon-name"></span>
-                            </div>
-
-                            <div class="form__field-wrapper flex">
-                                <label for="fb_lastname" class="form__label">Required *</label>
-
-                                <input tabindex="2" id="fb_lastname" class="form__field" type="text" maxlength="120" name="lastname" placeholder="Last Name" required>
-                            </div>
-                        </div>
-
-                        <div class="form__field-wrapper">
-                            <label for="fb_location" class="form__label">Required *</label>
-
-                            <input tabindex="3" id="fb_location" class="form__field" type="text" maxlength="200" name="address" placeholder="Location" required>
-
-                            <span class="form__icon form__icon-location"></span>
-                        </div>
-
-                        <div class="form__field-wrapper">
-                            <label for="fb_location" class="form__label">Required *</label>
-
-                            <textarea tabindex="4" class="form__textarea" name="message" maxlength="1000" placeholder="Your Feedback" required></textarea>
-                        </div>
-
-                        <input id="ratingResult" type="hidden" name="rating" value="" required>
-
-                        <input tabindex="5" type="submit" class="form__button-submit flex flex--align-center flex--justify-center font--bold" value="SUBMIT">
-                    </form>
-                </div>
-            </div>
         </div>
 
         <div class="section__feedback-img"></div>
@@ -300,7 +247,7 @@
                 <li class="section__showroom-address font--bold">NovaGp Vancouver <br> 320 Granville St, Unit 930 Vancouver, BC V6C1S9</li>
             </ul>
 
-            <button type="button" class="section__showroom-btn flex flex--align-center flex--justify-center flex--now-shrink">
+            <button id="bookNowBtn" type="button" class="section__showroom-btn flex flex--align-center flex--justify-center flex--now-shrink contact--js">
                 <img loading="lazy" width="54" height="54" class="section__showroom-btn-img" src="./img/book_now_btn.svg" alt="Order Book Button">
                 <span class="section__showroom-btn-text font--bold flex flex--now-shrink">BOOK NOW</span>
             </button>
@@ -335,20 +282,207 @@
         <img loading="lazy" class="section__contact-btn-img" src="./img/contact_us.svg" alt="Contact Us Button">
     </button>
 
-    <div id="popupContactUs" class="contact-us-popup">
-        <div class="contact-us-popup__container flex flex--column">
-            <h2 class="contact-us-popup__title font--bold">Contact Us</h2>
+    <div id="popupFeedback" class="popup">
+        <div class="form">
+            <div class="form__close"></div>
 
-            <p class="contact-us-popup__subtitle">We will get back to you asap!</p>
+            <h2 class="form__title font--bold">Leave you feedback</h2>
 
-            <div style="height: 300px; width: 100%;" class="flex flex--align-center flex--justify-center">
-                Some content...
+            <ul class="form__rating flex flex--justify-center flex--row-reverse">
+                <li data-rate="5" class="form__rating-star"></li>
+                <li data-rate="4" class="form__rating-star"></li>
+                <li data-rate="3" class="form__rating-star"></li>
+                <li data-rate="2" class="form__rating-star"></li>
+                <li data-rate="1" class="form__rating-star"></li>
+            </ul>
+
+            <form class="form__content flex flex--column">
+                <div class="form__container flex flex--align-center">
+                    <div class="form__field-wrapper">
+                        <label for="fb_firstname" class="form__label">Required *</label>
+
+                        <input tabindex="1" id="fb_firstname" class="form__field" type="text" maxlength="120" pattern="[A-Za-zА-Яа-яёЁіІїЇєЄ\s]+" name="firstname" placeholder="Name" required>
+
+                        <span class="form__icon form__icon-name"></span>
+                    </div>
+
+                    <div class="form__field-wrapper flex">
+                        <label for="fb_lastname" class="form__label">Required *</label>
+
+                        <input tabindex="2" id="fb_lastname" class="form__field" type="text" maxlength="120" pattern="[A-Za-zА-Яа-яёЁіІїЇєЄ\s]+" name="lastname" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <div class="form__field-wrapper">
+                    <label for="fb_location" class="form__label">Required *</label>
+
+                    <input tabindex="3" id="fb_location" class="form__field" type="text" maxlength="200" name="address" placeholder="Location" required>
+
+                    <span class="form__icon form__icon-location"></span>
+                </div>
+
+                <div class="form__field-wrapper">
+                    <label for="fb_location" class="form__label">Required *</label>
+
+                    <textarea tabindex="4" class="form__textarea" name="message" maxlength="1000" placeholder="Your Feedback" required></textarea>
+                </div>
+
+                <input id="ratingResult" type="hidden" name="rating" value="">
+
+                <input tabindex="5" type="submit" class="form__button-submit flex flex--align-center flex--justify-center font--bold" value="SUBMIT">
+            </form>
+        </div>
+    </div>
+
+    <div id="popupContactUs" class="popup">
+        <div class="form">
+            <div class="form__close"></div>
+
+            <h2 class="form__title font--bold">Contact Us</h2>
+
+            <form class="form__content flex flex--column">
+                <div class="form__container flex flex--align-center">
+                    <div class="form__field-wrapper">
+                        <label for="fc_firstname" class="form__label">Required *</label>
+
+                        <input tabindex="1" id="fc_firstname" class="form__field" type="text" maxlength="120" pattern="[A-Za-zА-Яа-яёЁіІїЇєЄ\s]+" name="firstname" placeholder="Name" required>
+
+                        <span class="form__icon form__icon-name"></span>
+                    </div>
+
+                    <div class="form__field-wrapper flex">
+                        <label for="fc_lastname" class="form__label">Required *</label>
+
+                        <input tabindex="2" id="fc_lastname" class="form__field" type="text" maxlength="120" pattern="[A-Za-zА-Яа-яёЁіІїЇєЄ\s]+" name="lastname" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <div class="form__field-wrapper">
+                    <input tabindex="3" class="form__field" type="text" maxlength="100" name="company" placeholder="Company">
+
+                    <span class="form__icon form__icon-company"></span>
+                </div>
+
+                <div class="form__field-wrapper">
+                    <label for="fc_location" class="form__label">Required *</label>
+
+                    <input tabindex="4" id="fc_location" class="form__field" type="text" maxlength="200" name="address" placeholder="Location" required>
+
+                    <span class="form__icon form__icon-location"></span>
+                </div>
+
+                <div class="form__field-wrapper">
+                    <label for="fc_mail" class="form__label">Required *</label>
+
+                    <input tabindex="5" id="fc_mail" class="form__field" type="email" maxlength="100" name="email" placeholder="E-mail" required>
+
+                    <span class="form__icon form__icon-mail"></span>
+                </div>
+
+                <div class="form__field-wrapper">
+                    <label for="fc_phone" class="form__label">Required *</label>
+
+                    <input tabindex="6" id="fc_phone" class="form__field" type="tel" pattern="^\+1\s?\(?[2-9][0-9]{2}\)?[.\-\s]?[2-9][0-9]{2}[.\-\s]?[0-9]{4}$" maxlength="30" name="phone" placeholder="Phone number" required>
+
+                    <span class="form__icon form__icon-phone"></span>
+                </div>
+
+                <div class="form__field-wrapper">
+                    <label for="fc_location" class="form__label">Required *</label>
+
+                    <textarea tabindex="7" id="fc_location" class="form__textarea" name="message" maxlength="1000" placeholder="What are you looking for?" required></textarea>
+                </div>
+
+                <input tabindex="8" type="submit" class="form__button-submit flex flex--align-center flex--justify-center font--bold" value="SUBMIT">
+            </form>
+
+            <div class="form__contact flex flex--justify-center justify-center">
+                <span>You may also call us at</span>
+
+                <a href="tel:+19055693389" class="form__contact-tel">+1 (905) 569-3389</a>
             </div>
 
-            <div class="contact-us-popup__container flex flex--align-center flex--justify-center">
-                <span class="contact-us-popup__call">You may also call us at</span>
-                <a href="tel:+1234567890" class="contact-us-popup__tel">+1 (234) 567-890</a>
-            </div>
+            <p class="form__contact-text">Please note we only deliver to North America.</p>
+        </div>
+    </div>
+
+    <div id="popupOrder" class="popup">
+        <div class="form">
+            <div class="form__close"></div>
+
+            <h2 class="form__title font--bold">Order Now</h2>
+
+            <p class="form__subtitle">Fill out the request below to receive your free sample. You will receive a 1 foot long sample of the product. It will demonstrate the construction, finish and colour of the flooring.</p>
+
+            <form class="form__content flex flex--column">
+                <div class="form__container flex flex--align-center">
+                    <div class="form__field-wrapper">
+                        <label for="fo_firstname" class="form__label">Required *</label>
+
+                        <input tabindex="1" id="fo_firstname" class="form__field" type="text" maxlength="120" pattern="[A-Za-zА-Яа-яёЁіІїЇєЄ\s]+" name="firstname" placeholder="Name" required>
+
+                        <span class="form__icon form__icon-name"></span>
+                    </div>
+
+                    <div class="form__field-wrapper flex">
+                        <label for="fo_lastname" class="form__label">Required *</label>
+
+                        <input tabindex="2" id="fo_lastname" class="form__field" type="text" maxlength="120" pattern="[A-Za-zА-Яа-яёЁіІїЇєЄ\s]+" name="lastname" placeholder="Last Name" required>
+                    </div>
+                </div>
+
+                <div class="form__field-wrapper">
+                    <input tabindex="3" class="form__field" type="text" maxlength="100" name="company" placeholder="Company">
+
+                    <span class="form__icon form__icon-company"></span>
+                </div>
+
+                <div class="form__field-wrapper">
+                    <label for="fo_location" class="form__label">Required *</label>
+
+                    <input tabindex="4" id="fo_location" class="form__field" type="text" maxlength="200" name="address" placeholder="Delivery Address" required>
+
+                    <span class="form__icon form__icon-location"></span>
+                </div>
+
+                <div class="form__field-wrapper">
+                    <label for="fo_mail" class="form__label">Required *</label>
+
+                    <input tabindex="5" id="fo_mail" class="form__field" type="email" maxlength="100" name="email" placeholder="E-mail" required>
+
+                    <span class="form__icon form__icon-mail"></span>
+                </div>
+
+                <div class="form__field-wrapper">
+                    <label for="fo_phone" class="form__label">Required *</label>
+
+                    <input tabindex="6" id="fo_phone" class="form__field" type="tel" pattern="^\+1\s?\(?[2-9][0-9]{2}\)?[.\-\s]?[2-9][0-9]{2}[.\-\s]?[0-9]{4}$" maxlength="30" name="phone" placeholder="Phone number" required>
+
+                    <span class="form__icon form__icon-phone"></span>
+                </div>
+
+                <div class="form__field-wrapper">
+                    <label for="fo_msg" class="form__label">Required *</label>
+
+                    <textarea tabindex="7" id="fo_msg" class="form__textarea" name="message" maxlength="1000" placeholder="What are you looking for?" required></textarea>
+                </div>
+
+                <input tabindex="8" type="submit" class="form__button-submit flex flex--align-center flex--justify-center font--bold" value="SUBMIT">
+            </form>
+
+            <p class="form__contact form__contact-text font--bold">Shipping Cost 29.99$</p>
+        </div>
+    </div>
+
+    <div id="popupSuccess" class="popup">
+        <div class="form flex flex--column flex--align-center">
+            <div class="form__close"></div>
+
+            <img class="form__success-img" src="./img/check_icon.svg" alt="Succes">
+
+            <h2 id="successMsg" class="form__success-title font--bold"></h2>
+
+            <input id="successClose" type="button" class="form__button-submit form__success-submit flex flex--align-center flex--justify-center font--bold" value="OK">
         </div>
     </div>
 </main>
