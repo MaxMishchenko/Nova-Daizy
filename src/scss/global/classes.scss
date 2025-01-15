@@ -48,7 +48,7 @@
 
 .section {
     &--shadow {
-        background-color: #fbfbfb63;
+        background-color: var(--color--shadow);
     }
 }
 
