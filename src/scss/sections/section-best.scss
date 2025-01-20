@@ -45,10 +45,8 @@
             @media only screen and (max-width: 768px) {
                 padding-top: 20px;
                 justify-content: center;
-            }
-
-            @media only screen and (max-width: 425px) {
                 flex-direction: column-reverse;
+                align-items: center;
             }
         }
 
@@ -78,6 +76,14 @@
 
             &:first-child {
                 margin-right: 75px;
+
+                @media only screen and (max-width: 1280px) {
+                    margin-right: 40px;
+                }
+
+                @media only screen and (max-width: 768px) {
+                    margin-right: 25px;
+                }
 
                 @media only screen and (max-width: 425px) {
                     margin: 0 auto;
@@ -142,9 +148,10 @@
 
             &-info {
                 font-size: 1.375rem;
-                position: absolute;
-                bottom: 15px;
-                right: -50px;
+            }
+
+            &-foreign {
+                font-size: 2.5rem;
             }
         }
 
@@ -162,11 +169,8 @@
 
             @media only screen and (max-width: 1024px) {
                 position: relative;
-                transform: translateX(0);
                 bottom: 0;
-                right: 0;
-                display: grid;
-                justify-self: flex-end;
+                left: 50%;
             }
 
             &:hover {
