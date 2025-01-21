@@ -53,6 +53,11 @@
         &-title {
             margin-bottom: 20px;
             font-size: 1.75rem;
+            max-width: 390px;
+
+            @media only screen and (max-width: 1024px) {
+                max-width: 100%;
+            }
         }
 
         &-text {

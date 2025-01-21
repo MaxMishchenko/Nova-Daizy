@@ -44,32 +44,31 @@
             }
         }
 
-        &-text {
-            font-size: 1.375rem;
-            font-weight: 400;
-
-            @media only screen and (max-width: 1280px) {
-                font-size: 1.125rem;
-                text-align: right;
-            }
+        &-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-right: 5px;
 
             @media only screen and (max-width: 768px) {
-                display: none;
+                margin-right: 0;
             }
         }
 
         &-heading {
-            margin-right: 20px;
-        }
-
-        &-title {
-            font-size: 1.75rem;
-            font-weight: 700;
+            @media only screen and (max-width: 768px) {
+                flex-direction: column;
+                align-items: baseline;
+            }
         }
 
         &-subtitle {
-            font-size: 1rem;
-            font-weight: 400;
+            font-size: 1.75rem;
+            font-weight: 700;
+
+            @media only screen and (max-width: 768px) {
+                font-size: 1rem;
+                font-weight: 400;
+            }
         }
 
         &-img {
